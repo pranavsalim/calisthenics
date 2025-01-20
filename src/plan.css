@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: #222;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: whitesmoke; /* Dark violet color */
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+.workout-plan {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.day {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.day:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.day h2 {
+  font-size: 1.8rem;
+  color: whitesmoke; /* Dark violet color */
+  margin-bottom: 1rem;
+}
+
+.day ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.day ul li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.day p {
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.complete-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #6a0dad; /* Dark violet color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.complete-btn:hover {
+  background-color: #4e0b86; /* Darker shade of violet for hover */
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #bbb;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+      font-size: 2rem;
+  }
+
+  header p {
+      font-size: 1rem;
+  }
+
+  .day h2 {
+      font-size: 1.5rem;
+  }
+
+  .day ul li {
+      font-size: 0.9rem;
+  }
+}

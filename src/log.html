@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Form</title>
+  <link rel="stylesheet" href="log.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Alert Message -->
+    <div id="alert-container" class="custom-alert" style="display: none;">
+      <span>Your form has been submitted.</span>
+      <button onclick="closeAlert()" class="close-alert">&times;</button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="backarrow.png" alt="Back" id="backarrow" onclick="handleBackClick()" />
+      </div>
+      <h1 id="website-name"> <img src="favicon.png" alt="logo" id="website-logonav" /> CALISTHENICS</h1>
+    </nav>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      <h2 id="form-heading">Fill out the form with correct details to proceed with your app upload</h2>
+
+      <form id="app-form" class="custom-form">
+        <div class="form-group">
+          <input type="text" id="name" name="name" required class="input-field" />
+          <label for="name" class="input-label">Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" name="email" required class="input-field" />
+          <label for="email" class="input-label">Email</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" id="contactNo" name="contactNo" required class="input-field" />
+          <label for="contactNo" class="input-label">Contact Number</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="address" name="address" required class="input-field" />
+          <label for="address" class="input-label">Address</label>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="handleSubmit()">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Handle back button click
+    function handleBackClick() {
+      window.history.back();
+    }
+
+    // Show alert when form is submitted successfully
+    function showAlert() {
+      document.getElementById('alert-container').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('alert-container').style.display = 'none';
+      }, 1000);
+    }
+
+    // Close the alert message
+    function closeAlert() {
+      document.getElementById('alert-container').style.display = 'none';
+    }
+
+    // Handle form submission
+    function handleSubmit() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const contactNo = document.getElementById('contactNo').value;
+      const address = document.getElementById('address').value;
+
+      const requiredFields = [name, email, contactNo, address];
+      let firstEmptyField = null;
+
+      for (let field of requiredFields) {
+        if (!field.trim()) {
+          firstEmptyField = field;
+          break;
+        }
+      }
+
+      if (firstEmptyField) {
+        alert('Please fill all the required fields.');
+        document.getElementById(firstEmptyField.id).focus();
+      } else {
+        sendMail(name, email, contactNo);
+        showAlert();
+        window.location.href = '/Paymentpage';
+      }
+    }
+
+    // Send data via GET request (you can use axios or fetch)
+    function sendMail(name, email, contact) {
+      fetch('https://server-5937.onrender.com/', {
+        method: 'GET',
+        params: { email, name, contact }
+      })
+      .then(() => {
+        console.log('Success');
+      })
+      .catch(() => {
+        console.log('Failure');
+      });
+    }
+  </script>
+
+</body>
+</html>

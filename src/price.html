@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+
+    <!-- Embedded CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background-color: #222;
+            border: 2px solid darkviolet;
+            border-radius: 10px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pricing-card h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: darkviolet;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            margin: 15px 0;
+            color: white;
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            color: darkviolet;
+        }
+
+        .features {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+        }
+
+        .cta-btn {
+            background-color: darkviolet;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #8a2be2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-card {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .price {
+                font-size: 2rem;
+            }
+
+            .cta-btn {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Pricing Plans</h1>
+    </header>
+
+    <main>
+        <section class="pricing-container">
+            <!-- Pricing Cards will be dynamically added using JavaScript -->
+            <div class="pricing-card" id="basic-plan">
+                <h2>Basic Plan</h2>
+                <div class="price">
+                    Rs.61<span>/ month</span>
+                </div>
+                <ul class="features">
+                    <li>1 User</li>
+                    <li>Basic Support</li>
+                    <li>Access to features</li>
+                </ul>
+                
+            </div>
+
+            
+        </section>
+    </main>
+
+    <footer>
+       
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        // JavaScript function for handling plan selection
+        function choosePlan(planName) {
+            alert("You have selected the " + planName + "!");
+        }
+    </script>
+</body>
+</html>

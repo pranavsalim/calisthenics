@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calisthenics Flexibility Exercises</title>
+    <style>
+        :root {
+            --bg-color: #000;
+            --text-color: #fff;
+            --accent-color: #4B0082; /* Darker violet */
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .exercise {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .exercise h2 {
+            color: whitesmoke;
+        }
+
+        .exercise p {
+            margin: 0.5rem 0;
+        }
+
+        .exercise img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+        }
+
+        .exercise video {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const exercises = document.querySelectorAll(".exercise");
+
+            exercises.forEach((exercise, index) => {
+                exercise.addEventListener("click", () => {
+                    alert(`You clicked on Exercise ${index + 1}: ${exercise.querySelector("h2").innerText}`);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Calisthenics Flexibility Exercises</h1>
+    </header>
+
+    <div class="container">
+        <div class="exercise">
+            <h2>1. Forward Fold Stretch</h2>
+            <p>This stretch helps to improve the flexibility of your hamstrings and lower back. Stand with feet together and slowly bend forward to touch your toes.</p>
+            <img src="https://via.placeholder.com/800x400?text=Forward+Fold+Stretch" alt="Forward Fold Stretch">
+        </div>
+
+        <div class="exercise">
+            <h2>2. Cat-Cow Pose</h2>
+            <p>A great warm-up exercise to loosen up your spine. Alternate between arching your back upwards like a cat and dipping it downwards like a cow.</p>
+            <img src="https://via.placeholder.com/800x400?text=Cat-Cow+Pose" alt="Cat-Cow Pose">
+        </div>
+
+        <div class="exercise">
+            <h2>3. Butterfly Stretch</h2>
+            <p>Sit on the floor, bring the soles of your feet together, and gently press your knees towards the floor. This targets your inner thighs and hips.</p>
+            <img src="https://via.placeholder.com/800x400?text=Butterfly+Stretch" alt="Butterfly Stretch">
+        </div>
+
+        <div class="exercise">
+            <h2>4. Bridge Pose</h2>
+            <p>This stretch opens up your chest and strengthens your back. Lie on your back, bend your knees, and lift your hips towards the ceiling.</p>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="exercise">
+            <h2>5. Cobra Stretch</h2>
+            <p>Lie on your stomach, place your palms on the floor under your shoulders, and gently lift your chest upwards. Great for improving spinal flexibility.</p>
+            <video controls>
+                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <footer>
+        
+    </footer>
+</body>
+</html>
+

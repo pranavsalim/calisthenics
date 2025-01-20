@@ -1,0 +1,150 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Navigation Bar Styling */
+.randomnav {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border-bottom: 2px solid violet;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#backarrow {
+    height: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#website_logonav {
+    height: 36px;
+    margin-right: 10px;
+}
+
+#website_namenav {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Payment Container Styling */
+.payment-container {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    border: 2px solid violet;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1.5s ease-in-out;
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Animated Header */
+.payment-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: glow 2s infinite;
+}
+
+/* Subtext Styling */
+.payment-subtext {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Button Styling */
+.pay-button {
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid violet;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.pay-button:hover {
+    background-color: violet;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .randomnav {
+        padding: 10px;
+    }
+
+    #website_namenav {
+        font-size: 20px;
+    }
+
+    .payment-container {
+        margin-top: 80px;
+    }
+
+    .payment-header {
+        font-size: 24px;
+    }
+
+    .payment-subtext {
+        font-size: 14px;
+    }
+
+    .pay-button {
+        font-size: 16px;
+    }
+}
+
+/* Animations */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet;
+    }
+    50% {
+        text-shadow: 0 0 15px violet, 0 0 30px violet, 0 0 45px violet;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px violet, 0 0 20px violet;
+    }
+    50% {
+        box-shadow: 0 0 20px violet, 0 0 40px violet;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

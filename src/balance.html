@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calisthenics Balance Exercises</title>
+    <style>
+        :root {
+            --bg-color: #000;
+            --text-color: #fff;
+            --accent-color: #4B0082; /* Dark violet */
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .exercise {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+        }
+
+        .exercise h2 {
+            color: whitesmoke;
+        }
+
+        .exercise p {
+            margin: 0.5rem 0;
+        }
+
+        .exercise img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+        }
+
+        .exercise video {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const exercises = document.querySelectorAll(".exercise");
+
+            exercises.forEach((exercise, index) => {
+                exercise.addEventListener("click", () => {
+                    alert(`You clicked on Exercise ${index + 1}: ${exercise.querySelector("h2").innerText}`);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Calisthenics Balance Exercises</h1>
+    </header>
+
+    <div class="container">
+        <div class="exercise">
+            <h2>1. Single-Leg Stand</h2>
+            <p>Stand on one leg and try to maintain your balance. This exercise strengthens your core and improves stability.</p>
+            <img src="https://via.placeholder.com/800x400?text=Single-Leg+Stand" alt="Single-Leg Stand">
+        </div>
+
+        <div class="exercise">
+            <h2>2. Tightrope Walk</h2>
+            <p>Walk in a straight line placing one foot directly in front of the other, as if walking on a tightrope. This enhances coordination and balance.</p>
+            <img src="https://via.placeholder.com/800x400?text=Tightrope+Walk" alt="Tightrope Walk">
+        </div>
+
+        <div class="exercise">
+            <h2>3. Flamingo Stand</h2>
+            <p>Hold one leg up and stretch your arms to the side for balance. A great exercise to improve single-leg stability.</p>
+            <img src="https://via.placeholder.com/800x400?text=Flamingo+Stand" alt="Flamingo Stand">
+        </div>
+
+        <div class="exercise">
+            <h2>4. Plank Shoulder Taps</h2>
+            <p>In a plank position, alternate tapping your shoulders with your opposite hand while keeping your core stable.</p>
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="exercise">
+            <h2>5. Balance Beam Squats</h2>
+            <p>Perform squats on a narrow surface like a balance beam or a sturdy ledge to challenge your equilibrium.</p>
+            <video controls>
+                <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <footer>
+        
+    </footer>
+</body>
+</html>

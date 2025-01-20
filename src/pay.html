@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Payment Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar Styling */
+        .randomnav {
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            background-color: #1a1a1a;
+            border-bottom: 2px solid violet;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #backarrow {
+            height: 24px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #website_namenav {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Payment Container Styling */
+        .payment-container {
+            text-align: center;
+            margin-top: 120px;
+            padding: 20px;
+            border: 2px solid violet;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animated Header */
+        .payment-header {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            ;
+        }
+
+        /* Subtext Styling */
+        .payment-subtext {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Button Styling */
+        .pay-button {
+            background: transparent;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid violet;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .pay-button:hover {
+            background-color: violet;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .randomnav {
+                padding: 10px;
+            }
+
+            #website_namenav {
+                font-size: 20px;
+            }
+
+            .payment-container {
+                margin-top: 100px;
+            }
+
+            .payment-header {
+                font-size: 24px;
+            }
+
+            .payment-subtext {
+                font-size: 14px;
+            }
+
+            .pay-button {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-container {
+                margin-top: 80px;
+                padding: 15px;
+            }
+
+            .payment-header {
+                font-size: 22px;
+            }
+
+            .payment-subtext {
+                font-size: 12px;
+            }
+
+            .pay-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        /* Animations */
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet;
+            }
+            50% {
+                text-shadow: 0 0 15px violet, 0 0 30px violet, 0 0 45px violet;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="all">
+
+        <!-- Navigation Bar -->
+        <nav class="randomnav">
+            <img src="/compnent/backarrow.png" alt="Back" id="backarrow" onclick="window.history.back();" />
+            <h1 id="website_namenav">Calisthenics</h1>
+        </nav>
+
+        <!-- Payment Container -->
+        <div class="payment-container">
+            <h1 class="payment-header">Pay Now</h1>
+            <p class="payment-subtext">
+                Pay <strong>61.00</strong> to unlock your subscription and gain access to advanced workout details.
+            </p>
+            <button class="pay-button" onclick="window.location.href='https://rzp.io/rzp/H3Fl39mi'">
+                Pay <strong>61.00</strong> INR
+            </button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+

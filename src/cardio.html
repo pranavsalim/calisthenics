@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardio Exercises</title>
+
+    <!-- Internal CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cardio {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            background-color: rgb(47, 40, 49);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: rgb(47, 40, 49);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            li {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cardio Exercises</h1>
+    </header>
+
+    <main>
+        <section class="cardio">
+            <h2>Popular Cardio Exercises</h2>
+            <ul id="exercise-list">
+                <!-- List of exercises will be dynamically added using JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+       
+    </footer>
+
+    <!-- Internal JavaScript -->
+    <script>
+        const exercises = [
+            "Running",
+            "Jump Rope",
+            "Cycling",
+            "Swimming",
+            "Rowing",
+            "Jumping Jacks",
+            "Burpees",
+            "High Knees"
+        ];
+
+        const exerciseList = document.getElementById("exercise-list");
+
+        exercises.forEach(exercise => {
+            const listItem = document.createElement("li");
+            listItem.textContent = exercise;
+            exerciseList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <div class="Contact container" id="contactSection">
+    <div class="contact_col1">
+      <h3>Send us a message <img src="msg-icon.png" alt="Message Icon" /></h3>
+      <p>Feel free to reach out through the contact form or find our contact information below. Your feedback, questions, and suggestions are important to us as we strive to provide exceptional service to our university community.</p>
+      <ul>
+        <li><img src="mail-icon.png" alt="Mail Icon" /> pranavsalim20@gmail.com</li>
+        <li><img src="phone-icon.png" alt="Phone Icon" /> +91 9588687128</li>
+        <li><img src="location-icon.png" alt="Location Icon" /> Zeal Polytechnic, Narhe, Pune</li>
+      </ul>
+    </div>
+
+    <div class="contact_col1">
+      <form id="contactForm">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" maxlength="10" pattern="\d{5,10}" placeholder="Enter your Mobile No." required />
+
+        <label for="message">Write your message here</label>
+        <textarea id="message" name="message" rows="6" placeholder="Enter your Message Here" required></textarea>
+
+        <button type="submit" class="btn">Submit <img src="white-arrow.png" alt="Arrow Icon" /></button>
+      </form>
+
+      <span id="result"></span>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      const resultElement = document.getElementById('result');
+      resultElement.textContent = "Sending....";
+
+      const formData = new FormData(event.target);
+      formData.append("access_key", "b8e0ac71-fede-41d5-9f1f-0452b45e5eab");
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          resultElement.textContent = "Form Submitted Successfully";
+          event.target.reset();
+        } else {
+          console.error("Error", data);
+          resultElement.textContent = data.message;
+        }
+      } catch (error) {
+        console.error("Error submitting form", error);
+        resultElement.textContent = "An error occurred. Please try again later.";
+      }
+    });
+  </script>
+
+</body>
+</html>
+

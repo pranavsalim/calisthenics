@@ -1,0 +1,148 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d; /* Black background */
+  color: #ffffff; /* White text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Navigation Bar */
+.randomnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #1a1a1a; /* Darker black for the nav background */
+  color: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#backarrow {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  filter: invert(1); /* Makes the image appear white */
+}
+
+#website_logonav {
+  width: 40px;
+  height: 40px;
+}
+
+#website_namenav {
+  font-size: 18px;
+  font-weight: bold;
+  color: #9b59b6; /* Violet text */
+}
+
+/* Payment Container */
+.payment-container {
+  background: #1a1a1a; /* Dark background for the payment card */
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.payment-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #9b59b6; /* Violet header text */
+  margin-bottom: 10px;
+}
+
+.payment-subtext {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.pay-button {
+  background-color: #9b59b6; /* Violet background for the button */
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.pay-button:hover {
+  background-color: #6c3483; /* Darker violet on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-header {
+      font-size: 20px;
+  }
+
+  .payment-subtext {
+      font-size: 14px;
+  }
+
+  .pay-button {
+      font-size: 16px;
+      padding: 10px;
+  }
+
+  #website_namenav {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .randomnav {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+
+  #backarrow {
+      display: none;
+  }
+
+  #website_logonav {
+      width: 35px;
+      height: 35px;
+  }
+
+  #website_namenav {
+      font-size: 14px;
+  }
+
+  .payment-container {
+      padding: 15px;
+  }
+
+  .payment-header {
+      font-size: 18px;
+  }
+
+  .payment-subtext {
+      font-size: 13px;
+  }
+
+  .pay-button {
+      font-size: 14px;
+  }
+}

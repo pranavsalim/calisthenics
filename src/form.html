@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Form</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+  <div class="all">
+    <!-- Alert Message -->
+    <div id="alert-container" class="custom-alert" style="display: none;">
+      <span>Your form has been Submitted.</span>
+      <button onclick="closeAlert()" class="close-alert">&times;</button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="randomnav">
+        <div class="background">
+          <img src="backarrow.png" alt="Back" id="backarrow" onclick="handleBackClick()" />
+        </div>
+        <img src="favicon.png" alt="logo" id="website_logonav" />
+        <h1 id="website_namenav">CALISTHENICS</h1>
+      </nav>
+
+    <!-- Form Container -->
+    <div class="custom-form-container">
+      <h2 id="onehead">*Fill out the form with correct details to proceed with your app upload</h2>
+      <form id="app-form" class="custom-form" >
+        <div class="custom-form-group">
+          <input type="text" id="name" name="name" required class="custom-input" />
+          <label for="name" class="custom-label">Name</label>
+          <span class="custom-underline"></span>
+        </div>
+
+        <div class="custom-form-group">
+          <input type="email" id="email" name="email" required class="custom-input" />
+          <label for="email" class="custom-label">Email</label>
+          <span class="custom-underline"></span>
+        </div>
+
+        <div class="custom-form-group">
+          <input type="tel" id="contactNo" name="contactNo" required class="custom-input" />
+          <label for="contactNo" class="custom-label">Contact Number</label>
+          <span class="custom-underline"></span>
+        </div>
+
+        <div class="custom-form-group">
+          <input type="text" id="address" name="address" required class="custom-input" />
+          <label for="address" class="custom-label">Address</label>
+          <span class="custom-underline"></span>
+        </div>
+
+        <button type="button" class="custom-submit-btn"  onclick="sendmail()">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+
+
+const sendmail = () => {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const contact = document.getElementById('contactNo').value;
+
+    // Send data to the server using axios POST request
+    axios.post('http://localhost:5000/', {
+        email: email,
+        name: name,
+        contact: contact
+    })
+    .then(function(response) {
+        // Handle success
+        console.log('Success:', response.data);
+        document.getElementById('responseMessage').textContent = 'Data submitted successfully!';
+    })
+    .catch(function(error) {
+        // Handle error
+        console.error('Error:', error);
+        document.getElementById('responseMessage').textContent = 'Error submitting data.';
+    });
+};
+
+            // Get form data
+            
+     
+  </script>
+
+   
+
+</body>
+</html>
