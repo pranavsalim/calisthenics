@@ -84,6 +84,29 @@
             margin-top: 50px;
         }
 
+        .home__triangle{
+  height: 325px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.home__triangle-1{
+  width: 105px;
+  background-color: hsl(270, 100%, 30%);
+}
+
+.home__triangle-2{
+  width: 205px;
+  background-color: hsl(270, 100%, 50%);
+}
+
+.home__triangle-3{
+  width: 305px;
+  background-color:hsl(270, 100%, 20%);
+}
+
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
@@ -138,16 +161,20 @@
         <section>
             <h2>Why Calisthenics?</h2>
             <p>Calisthenics provides a unique approach to fitness that allows you to build strength and flexibility using just your body weight. With no need for expensive gym memberships or equipment, Calisthenics allows you to work out anywhere, anytime.</p>
-            <img src="/compnent/favicon.png" alt="Calisthenics" class="about-image">
+            
         </section>
 
         <section>
-            
+            <div class="home__triangle home__triangle-3"></div>
+                        <div class="home__triangle home__triangle-2"></div>
+                        <div class="home__triangle home__triangle-1"></div>
         </section>
     </main>
 
     <footer>
-        
+        <span class="footer__copy">
+            &#169; Copyright Calistehnicscode. All rights reserved
+        </span>
     </footer>
 
     <!-- Embedded JavaScript -->
