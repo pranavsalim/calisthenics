@@ -17,7 +17,7 @@ function handlePaymentResponse(response) {
 function initiatePayment() {
     var options = {
         "key": "YOUR_RAZORPAY_KEY", // Replace with your Razorpay public key
-        "amount": 6100, // Amount in paise (61 INR = 6100 paise)
+        "amount": 2100, // Amount in paise (61 INR = 6100 paise)
         "currency": "INR",
         "name": "Calisthenics Subscription",
         "description": "Unlock Premium Access",
