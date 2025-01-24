@@ -235,7 +235,7 @@ img {
 }
 
 .nav__link:hover{
-  color: var(--first-color);
+  color:yellow;
 }
 
 .nav__close{
