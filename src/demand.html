@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition & Fitness Plan</title>
+    <!-- Linking Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: rgb(19, 1, 27); /* Dark Purple */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+            margin-top: 60px;
+            background-color: #111;
+            transition: background-color 0.3s;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .home__triangle{
+  height: 325px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.home__triangle-1{
+  width: 105px;
+  background-color: hsl(270, 100%, 30%);
+  z-index: -1;
+}
+
+.home__triangle-2{
+  width: 205px;
+  background-color: hsl(270, 100%, 50%);
+  z-index: -1;
+}
+
+.home__triangle-3{
+  width: 305px;
+  background-color: hsl(270, 100%, 20%);
+  z-index: -1;
+}
+
+        button {
+            background-color: rgb(19, 1, 27); /* Dark Purple */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(19, 1, 27); /* Slightly darker purple */
+        }
+
+        /* Diet Plan Selection */
+        .diet-options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .diet-option {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .diet-option:hover {
+            transform: scale(1.05);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 300px;
+        }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .testimonials {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .testimonial {
+                width: 90%;
+            }
+
+            .diet-option {
+                width: 80%;
+                margin: 10px auto;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation */
+        .animation {
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Advanced Features</h1>
+    </header>
+
+    <!-- Nutrition Plans Section -->
+    <section id="nutrition" class="animation">
+        <div class="container">
+            <h2>Nutrition & Diet Plans</h2>
+            <p>Here are some personalized nutrition and diet plans tailored to your fitness needs. Take the first step towards a healthier life.</p>
+            <button onclick="showDietSelection()">Get Your Diet Plan</button>
+        </div>
+    </section>
+
+ 
+        <div class="home__triangle home__triangle-3"></div>
+        <div class="home__triangle home__triangle-2"></div>
+        <div class="home__triangle home__triangle-1"></div>
+    
+    <!-- Diet Plan Selection Section -->
+    <section id="dietSelection" class="animation" style="display: none;">
+        <div class="container">
+            <h2>Choose Your Diet Plan</h2>
+            <div class="diet-options">
+                <div class="diet-option" onclick="showDietDetails('muscleGain')">
+                    <h3>Muscle Gain</h3>
+                    <p>High-protein meals with carbs and healthy fats for optimal muscle growth.</p>
+                </div>
+                <div class="diet-option" onclick="showDietDetails('fatLoss')">
+                    <h3>Fat Loss</h3>
+                    <p>Low-calorie, high-protein, and fiber-rich foods to help burn fat effectively.</p>
+                </div>
+                <div class="diet-option" onclick="showDietDetails('leanMass')">
+                    <h3>Lean Mass</h3>
+                    <p>Balanced diet with moderate carbs, lean proteins, and healthy fats.</p>
+                </div>
+                <div class="diet-option" onclick="showDietDetails('maintenance')">
+                    <h3>Muscle Maintenance</h3>
+                    <p>Balanced diet with adequate protein and carbs for sustaining muscle mass.</p>
+                </div>
+                <div class="diet-option" onclick="showDietDetails('generalHealth')">
+                    <h3>General Health</h3>
+                    <p>A well-rounded diet with all essential nutrients for overall health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diet Plan Details Section -->
+    <section id="dietDetails" class="animation" style="display: none;">
+        <div class="container">
+            <h2>Your Selected Diet Plan</h2>
+            <div id="dietDetailsContent"></div>
+            <button onclick="goBackToDietSelection()">Go Back</button>
+        </div>
+    </section>
+
+    <!-- Progress Tracking Section -->
+    <section id="progress" class="animation">
+        <div class="container">
+            <h2>Progress Tracking</h2>
+
+            <!-- Form for user to input progress data -->
+            <form id="progressForm">
+                <label for="dailyProgress">Daily Progress in minutes:</label><br>
+                <input type="number" id="dailyProgress" required><br><br>
+
+                <label for="weeklyProgress">Weekly Progress in minutes:</label><br>
+                <input type="number" id="weeklyProgress" required><br><br>
+
+                <label for="monthlyProgress">Monthly Progress in minutes:</label><br>
+                <input type="number" id="monthlyProgress" required><br><br>
+
+                <label for="yearlyProgress">Yearly Progress in minutes:</label><br>
+                <input type="number" id="yearlyProgress" required><br><br>
+
+                <button type="submit">Submit Progress</button>
+            </form>
+
+            <div id="assessmentResult"></div>
+            <div class="progress-container">
+                <canvas id="progressChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Fitness Assessment Section -->
+    <section id="assessment" class="animation">
+        <div class="container">
+            <h2>AI Fitness Assessment</h2>
+            <p>Get personalized feedback on your fitness level. Input your details below:</p>
+            <form id="fitnessForm">
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" required><br><br>
+                <label for="weight">Weight (kg):</label><br>
+                <input type="number" id="weight" required><br><br>
+                <label for="height">Height (cm):</label><br>
+                <input type="number" id="height" required><br><br>
+                <button type="submit">Assess My Fitness</button>
+            </form>
+            <div id="assessmentResult"></div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="animation">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"This plan changed my life! I lost 20lbs in just 3 months!" - John Doe</p>
+                </div>
+                <div class="testimonial">
+                    <p>"The AI assessments were spot on, and my progress was amazing!" - Jane Smith</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="animation">
+        <div class="container">
+            <h2>Latest Blog Posts</h2>
+            <article>
+                <h3>How to Stay Fit During Winter</h3>
+                <p>Winter can be tough on your fitness routine, but here are some tips to stay active!</p>
+            </article>
+            <article>
+                <h3>Top 10 Healthy Recipes for Meal Prep</h3>
+                <p>Meal prepping is a great way to stay on track with your diet. Here are some tasty ideas!</p>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+       &#169; Copyright Calistehnicscode. All rights reserved</p>
+    </footer>
+
+    <script>
+        // Function to display the diet plan selection options
+        function showDietSelection() {
+            document.getElementById('nutrition').style.display = 'none';
+            document.getElementById('dietSelection').style.display = 'block';
+        }
+
+        // Function to show the selected diet plan details
+        function showDietDetails(plan) {
+            const dietDetailsContent = document.getElementById('dietDetailsContent');
+            let dietPlanText = '';
+
+            switch (plan) {
+                case 'muscleGain':
+                    dietPlanText = `
+                        <h3>Muscle Gain Plan</h3>
+                        <p>High-protein meals with carbs and healthy fats for optimal muscle growth. Focus on lean meats, fish, eggs, quinoa, and avocado.</p>
+                    `;
+                    break;
+                case 'fatLoss':
+                    dietPlanText = `
+                        <h3>Fat Loss Plan</h3>
+                        <p>Low-calorie, high-protein meals. Incorporate lots of vegetables, lean proteins like chicken, and avoid processed foods.</p>
+                    `;
+                    break;
+                case 'leanMass':
+                    dietPlanText = `
+                        <h3>Lean Mass Plan</h3>
+                        <p>Balanced diet with moderate carbs, lean proteins, and healthy fats. Ideal for individuals looking to increase muscle mass without adding fat.</p>
+                    `;
+                    break;
+                case 'maintenance':
+                    dietPlanText = `
+                        <h3>Muscle Maintenance Plan</h3>
+                        <p>Maintaining muscle mass requires a well-rounded diet, including protein, carbs, and healthy fats. Focus on eating balanced meals throughout the day.</p>
+                    `;
+                    break;
+                case 'generalHealth':
+                    dietPlanText = `
+                        <h3>General Health Plan</h3>
+                        <p>A well-rounded diet with all essential nutrients for overall health. Includes a mix of fruits, vegetables, lean proteins, and healthy fats.</p>
+                    `;
+                    break;
+            }
+
+            dietDetailsContent.innerHTML = dietPlanText;
+            document.getElementById('dietSelection').style.display = 'none';
+            document.getElementById('dietDetails').style.display = 'block';
+        }
+
+        // Function to go back to the diet selection
+        function goBackToDietSelection() {
+            document.getElementById('dietDetails').style.display = 'none';
+            document.getElementById('dietSelection').style.display = 'block';
+        }
+
+        // AI Fitness Assessment Logic
+        document.getElementById('fitnessForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const age = document.getElementById('age').value;
+            const weight = document.getElementById('weight').value;
+            const height = document.getElementById('height').value;
+
+            const fitnessScore = (age < 30 ? 1.2 : 1) * (weight / 70) * (height / 170);
+            const result = `Your fitness score is: ${fitnessScore.toFixed(2)}`;
+            document.getElementById('assessmentResult').innerText = result;
+        });
+
+        // Gamification Progress Tracking (Chart.js)
+        // Initialize progress chart
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        const progressChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Day 1', 'Week 1', 'Month 1', 'Year 1'], // Labels for the chart
+                datasets: [{
+                    label: 'Fitness Progress',
+                    data: [0, 0, 0, 0], // Default data points
+                    borderColor: '#5C6BC0',
+                    fill: false,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Fitness Progress Over Time'
+                    }
+                }
+            }
+        });
+
+        // Handle form submission to capture the user's progress and update the chart
+        document.getElementById('progressForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const dailyProgress = parseFloat(document.getElementById('dailyProgress').value);
+            const weeklyProgress = parseFloat(document.getElementById('weeklyProgress').value);
+            const monthlyProgress = parseFloat(document.getElementById('monthlyProgress').value);
+            const yearlyProgress = parseFloat(document.getElementById('yearlyProgress').value);
+
+            // Update chart data
+            progressChart.data.datasets[0].data = [dailyProgress, weeklyProgress, monthlyProgress, yearlyProgress];
+            progressChart.update();
+
+            // Show personalized feedback based on progress
+            provideProgressFeedback(dailyProgress, weeklyProgress, monthlyProgress, yearlyProgress);
+        });
+
+        // Function to provide personalized feedback based on progress
+        function provideProgressFeedback(daily, weekly, monthly, yearly) {
+            let feedback = '';
+            
+            if (daily < 2) {
+                feedback += 'Try to increase your daily effort to stay on track. Consider focusing on small improvements each day.\n';
+            }
+            if (weekly < 10) {
+                feedback += 'You might want to adjust your weekly goals to be more achievable. Consider adding more workouts or nutrition focus.\n';
+            }
+            if (monthly < 50) {
+                feedback += 'It seems like your progress is steady, but you may want to push a little more each month for faster results.\n';
+            }
+            if (yearly < 200) {
+                feedback += 'Make sure your yearly goals are well-defined and focus on sustainable changes for long-term progress.\n';
+            }
+
+            // Update assessment result
+            document.getElementById('assessmentResult').innerText = feedback;
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
