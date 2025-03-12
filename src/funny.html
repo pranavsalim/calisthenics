@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page with Magic Box</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+            line-height: 1.6;
+            padding-top: 100px;
+        }
+
+        header {
+            background-color: black;
+            padding: 20px;
+            color: whitesmoke;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Magic Box Styles */
+        .magic-box {
+            width: 300px;
+            height: 300px;
+            background-color: #f39c12;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .magic-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        .magic-box:active {
+            transform: scale(0.9);
+        }
+
+        /* Fun Text Inside Magic Box */
+        .magic-box p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Funny Animations */
+        .magic-box h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #fff;
+            color: #f39c12;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #f39c12;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Fun Workout Journey!</h1>
+    </header>
+
+    <!-- The Magic Box -->
+    <div class="magic-box" onclick="openMagicBox()">
+        <div>
+            <h2>✨ Click to Unlock the Magic! ✨</h2>
+            <p>Are you ready to work out and get fit?</p>
+        </div>
+    </div>
+
+    <script>
+        function openMagicBox() {
+            alert("Welcome to your magical workout adventure! 🎉");
+            setTimeout(function() {
+                window.location.href = 'calisthenics.html'; // Redirect to workout page
+            }, 1000); // Wait for 1 second before redirecting
+        }
+    </script>
+
+</body>
+</html>
